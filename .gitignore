@@ -22,3 +22,5 @@ Exports/
 .vscode/
 .idea/
 .DS_Store
+.godot_ide
+.ide
