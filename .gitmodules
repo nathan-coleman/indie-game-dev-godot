@@ -1,0 +1,3 @@
+[submodule "addons/scene_tree_folders"]
+	path = addons/scene_tree_folders
+	url = https://github.com/TheGrandJaggard/godot_scene_tree_folders.git
