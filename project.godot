@@ -24,8 +24,8 @@ ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autolo
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 
@@ -33,7 +33,7 @@ project/assembly_name="Indie Game Dev"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/_Godot-IDE_/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg")
+enabled=PackedStringArray("res://addons/_Godot-IDE_/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/scene_tree_folders/plugin.cfg")
 
 [file_customization]
 
