@@ -16,6 +16,11 @@ Author: [Jason Long](https://bsky.app/profile/jasonlong.me)
 Source: [git-scm.com](https://git-scm.com/downloads/logos)  
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)  
 
+#### Sound Effects
+Author: Kenney
+Source: [kenney.nl](https://www.kenney.nl/)
+License: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+
 ## Tools
 ### Godot Game Template
 ![Maaack Plugin Icon](/addons/maaacks_game_template/assets/plugin_logo/logo.png)  
