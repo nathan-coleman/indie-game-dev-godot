@@ -33,15 +33,7 @@ project/assembly_name="Indie Game Dev"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/_Godot-IDE_/plugin.cfg", "res://addons/maaacks_game_template/plugin.cfg", "res://addons/scene_tree_folders/plugin.cfg")
-
-[file_customization]
-
-folder_colors={
-"res://addons/_Godot-IDE_/plugins": "blue",
-"res://addons/_Godot-IDE_/plugins/": "blue",
-"res://addons/_Godot-IDE_/shared_resources/": "teal"
-}
+enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg", "res://addons/scene_tree_folders/plugin.cfg")
 
 [gui]
 
