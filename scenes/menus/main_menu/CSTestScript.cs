@@ -3,16 +3,16 @@ using System;
 
 namespace IndieGameDev.Nodes;
 
-public partial class CSTestNode : Node
+public partial class CSTestScript : Node
 {
     public override void _Ready()
     {
-        Console.WriteLine("CSTestNode getting ready");
+        Console.WriteLine("CSTestScript getting ready");
     }
 
     public override void _Process(double delta)
     {
         base._Process(delta);
-        Console.WriteLine("CSTestNode processing");
+        Console.WriteLine("CSTestScript processing");
     }
 }
