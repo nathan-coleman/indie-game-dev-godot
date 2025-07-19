@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://crgt8odc06uei"]
+
+[ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="1_hqmgi"]
+[ext_resource type="Theme" uid="uid://dtnyhehwgxgwu" path="res://resources/themes/grow.tres" id="1_xb203"]
+[ext_resource type="PackedScene" uid="uid://b51ffq7jnmic5" path="res://scenes/game_scene/overlaid_menus/pause_menu.tscn" id="2_3di6p"]
+[ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="3_jytbd"]
+[ext_resource type="PackedScene" uid="uid://23pse4dcm0r4" path="res://scenes/game_scene/hud_elements/bubble_bar_item.tscn" id="5_ducuf"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xb203")
+
+[node name="PauseMenuController" type="Node" parent="."]
+script = ExtResource("1_hqmgi")
+pause_menu_packed = ExtResource("2_3di6p")
+
+[node name="BackgroundMusicPlayer" parent="." instance=ExtResource("3_jytbd")]
+
+[node name="LeftSideLayoutBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BubblesBox" type="Control" parent="LeftSideLayoutBox"]
+layout_mode = 2
+
+[node name="ColorRect" type="Panel" parent="LeftSideLayoutBox/BubblesBox"]
+layout_mode = 0
+offset_right = 341.0
+offset_bottom = 616.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftSideLayoutBox/BubblesBox/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BubbleControl" parent="LeftSideLayoutBox/BubblesBox/ColorRect/VBoxContainer" instance=ExtResource("5_ducuf")]
+layout_mode = 2
+BubbleName = null
+BubbleAmount = null
+
+[node name="BubbleControl2" parent="LeftSideLayoutBox/BubblesBox/ColorRect/VBoxContainer" instance=ExtResource("5_ducuf")]
+layout_mode = 2
+BubbleName = null
+BubbleAmount = null
+
+[node name="BubbleControl3" parent="LeftSideLayoutBox/BubblesBox/ColorRect/VBoxContainer" instance=ExtResource("5_ducuf")]
+layout_mode = 2
+BubbleName = null
+BubbleAmount = null
