@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crgt8odc06uei"]
+[gd_scene load_steps=9 format=3 uid="uid://crgt8odc06uei"]
 
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="1_hqmgi"]
 [ext_resource type="Theme" uid="uid://dtnyhehwgxgwu" path="res://resources/themes/grow.tres" id="1_xb203"]
@@ -7,6 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://23pse4dcm0r4" path="res://scenes/game_scene/hud_elements/bubble_bar_item.tscn" id="5_ducuf"]
 [ext_resource type="Script" uid="uid://b0lx6s55mura4" path="res://scenes/game_scene/hud_elements/BubblesBox.cs" id="5_j8flk"]
 [ext_resource type="PackedScene" uid="uid://bdakja14n1wqw" path="res://scenes/game_scene/resize_parent_to_fit_children.tscn" id="8_201br"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmtvo"]
+bg_color = Color(0.19857, 0.463116, 0.488654, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.691321, 0.85764, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -57,3 +69,40 @@ layout_mode = 2
 [node name="DummyBubbleBarItem" parent="LeftSideLayoutBox/BubblesBox/MarginContainer/BubbleBarContainer" instance=ExtResource("5_ducuf")]
 layout_mode = 2
 tooltip_text = "test"
+
+[node name="FeatureBox" type="Panel" parent="LeftSideLayoutBox"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="ResizeParentToFitChildrenBehaviour" parent="LeftSideLayoutBox/FeatureBox" instance=ExtResource("8_201br")]
+_setSize = false
+
+[node name="MarginContainer" type="MarginContainer" parent="LeftSideLayoutBox/FeatureBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="FeatureContainer" type="VBoxContainer" parent="LeftSideLayoutBox/FeatureBox/MarginContainer"]
+layout_mode = 2
+
+[node name="DummyFeature" type="Panel" parent="LeftSideLayoutBox/FeatureBox/MarginContainer/FeatureContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wmtvo")
+
+[node name="Label" type="Label" parent="LeftSideLayoutBox/FeatureBox/MarginContainer/FeatureContainer/DummyFeature"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dummy Feature"
