@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bkcsjsk2ciff" path="res://addons/maaacks_game_template/base/scenes/music_players/background_music_player.tscn" id="3_jytbd"]
 [ext_resource type="PackedScene" uid="uid://23pse4dcm0r4" path="res://scenes/game_scene/hud_elements/bubble_bar_item.tscn" id="5_ducuf"]
 [ext_resource type="Script" uid="uid://b0lx6s55mura4" path="res://scenes/game_scene/hud_elements/BubblesBox.cs" id="5_j8flk"]
-[ext_resource type="Script" uid="uid://q4nf4upjb0w6" path="res://scenes/game_scene/FitChildrenContainer.cs" id="7_wmtvo"]
+[ext_resource type="PackedScene" uid="uid://bdakja14n1wqw" path="res://scenes/game_scene/resize_parent_to_fit_children.tscn" id="8_201br"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -25,36 +25,35 @@ pause_menu_packed = ExtResource("2_3di6p")
 
 [node name="LeftSideLayoutBox" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BubblesBox" type="Control" parent="LeftSideLayoutBox"]
-layout_mode = 2
-script = ExtResource("5_j8flk")
-bubbleBarItemPrefab = ExtResource("5_ducuf")
-
-[node name="ColorRect" type="Panel" parent="LeftSideLayoutBox/BubblesBox"]
-layout_mode = 0
-offset_right = 341.0
-offset_bottom = 616.0
-script = ExtResource("7_wmtvo")
-
-[node name="BubbleBarContainer" type="VBoxContainer" parent="LeftSideLayoutBox/BubblesBox/ColorRect"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.2
 anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
-grow_horizontal = 2
+offset_right = 10.0
+offset_bottom = 10.0
 grow_vertical = 2
-script = ExtResource("7_wmtvo")
 
-[node name="DummyBubbleBarItem" parent="LeftSideLayoutBox/BubblesBox/ColorRect/BubbleBarContainer" instance=ExtResource("5_ducuf")]
+[node name="BubblesBox" type="Panel" parent="LeftSideLayoutBox"]
+custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
+size_flags_vertical = 2
+script = ExtResource("5_j8flk")
+_bubbleBarItemPrefab = ExtResource("5_ducuf")
+
+[node name="ResizeParentToFitChildrenBehaviour" parent="LeftSideLayoutBox/BubblesBox" instance=ExtResource("8_201br")]
+_setSize = false
+
+[node name="MarginContainer" type="MarginContainer" parent="LeftSideLayoutBox/BubblesBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BubbleBarContainer" type="VBoxContainer" parent="LeftSideLayoutBox/BubblesBox/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DummyBubbleBarItem" parent="LeftSideLayoutBox/BubblesBox/MarginContainer/BubbleBarContainer" instance=ExtResource("5_ducuf")]
+layout_mode = 2
+tooltip_text = "test"
