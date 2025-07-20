@@ -38,12 +38,12 @@ pause_menu_packed = ExtResource("2_3di6p")
 [node name="LeftSideLayoutBox" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.2
+anchor_right = 0.25
 anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 10.0
-offset_bottom = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_vertical = 2
 
 [node name="BubblesBox" type="Panel" parent="LeftSideLayoutBox"]
