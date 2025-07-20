@@ -31,4 +31,18 @@ public partial class BubbleBarItem : Control
             bubbleProgressBar.Value = value;
         }
     }
+
+    public string BubbleDescription
+    {
+        get
+        {
+            return TooltipText;
+        }
+        set
+        {
+            var bubbleProgressBar = GetNode<ProgressBar>("%BubbleProgressBar");
+            bubbleProgressBar.TooltipText = value;
+            TooltipText = value;
+        }
+    }
 }

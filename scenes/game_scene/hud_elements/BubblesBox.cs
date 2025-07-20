@@ -5,17 +5,17 @@ namespace IndieGameDev.Game.UI;
 
 public partial class BubblesBox : Control
 {
-    [Export] private PackedScene bubbleBarItemPrefab;
+    [Export] private PackedScene _bubbleBarItemPrefab;
 
-    private static readonly Dictionary<string, int> demoBubbleValues = new()
+    private static readonly List<(string name, int amount, string description)> demoBubbleValues = new()
     {
-        { "Story", 10 },
-        { "Backend", 20 },
-        { "Gameplay", 40 },
-        { "Sound", 80 },
-        { "Progression", 50 },
-        { "Hype", 70 },
-        { "Polish", 30 }
+        ("Story", 10, "Test Description"),
+        ("Backend", 20, "Test Description"),
+        ("Gameplay", 40, "Test Description"),
+        ("Sound", 80, "Test Description"),
+        ("Progression", 50, "Test Description"),
+        ("Hype", 70, "Test Description"),
+        ("Polish", 30, "Test Description")
     };
 
     public override void _Ready()
@@ -26,15 +26,17 @@ public partial class BubblesBox : Control
 
         foreach (Node childNode in bubbleBarContainer.GetChildren())
         {
+            if (childNode is not Control) continue;
             childNode.QueueFree();
         }
 
         foreach (var bubbleValue in demoBubbleValues)
         {
-            var newBubbleBarItem = bubbleBarItemPrefab.Instantiate() as BubbleBarItem;
+            var newBubbleBarItem = _bubbleBarItemPrefab.Instantiate() as BubbleBarItem;
 
-            newBubbleBarItem.BubbleName = bubbleValue.Key;
-            newBubbleBarItem.BubbleAmount = bubbleValue.Value;
+            newBubbleBarItem.BubbleName = bubbleValue.name;
+            newBubbleBarItem.BubbleAmount = bubbleValue.amount;
+            newBubbleBarItem.BubbleDescription = bubbleValue.description;
 
             bubbleBarContainer.AddChild(newBubbleBarItem);
         }
