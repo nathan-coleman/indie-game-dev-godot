@@ -22,7 +22,7 @@ public partial class BubblesBox : Control
     {
         base._Ready();
 
-        var bubbleBarContainer = GetNode<Container>("%BubbleBarContainer");
+        var bubbleBarContainer = GetNode("%BubbleBarContainer");
 
         foreach (Node childNode in bubbleBarContainer.GetChildren())
         {
