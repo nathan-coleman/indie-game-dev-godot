@@ -7,7 +7,7 @@ GitHub: [nathan-coleman](https://github.com/nathan-coleman)
 
 ## Sourced resources
 #### Godot Engine Logo
-Author: Andrea Calabró
+Author: Andrea Calabró  
 Source: [godotengine.org](https://godotengine.org/press/)  
 License: [CC BY 4.0 International](https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt)  
 
@@ -17,9 +17,9 @@ Source: [git-scm.com](https://git-scm.com/downloads/logos)
 License: [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)  
 
 #### Sound Effects
-Author: Kenney
-Source: [kenney.nl](https://www.kenney.nl/)
-License: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+Author: Kenney  
+Source: [kenney.nl](https://www.kenney.nl/)  
+License: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)  
 
 ## Tools
 ### Godot Game Template
